@@ -6,7 +6,6 @@ import com.kfaka.demo.protos.Person;
 import com.kfaka.demo.serializer.SimpleProtobufDeserializer;
 import com.kfaka.demo.serializer.SimpleProtobufSerializer;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.kafka.common.serialization.Deserializer;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

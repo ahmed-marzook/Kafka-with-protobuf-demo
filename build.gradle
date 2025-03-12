@@ -36,9 +36,27 @@ tasks.named('test') {
 	useJUnitPlatform()
 }
 
+sourceSets {
+	main {
+		java {
+			srcDirs 'build/generated/source/proto/main/grpc'
+			srcDirs 'build/generated/source/proto/main/java'
+		}
+	}
+}
+
 protobuf {
 	protoc {
-		artifact = 'com.google.protobuf:protoc:4.30.0'
-		generatedFilesBaseDir= "$projectDir/src"
+		artifact = "com.google.protobuf:protoc:4.30.0"
+	}
+	plugins {
+		grpc {
+			artifact = "io.grpc:protoc-gen-grpc-java:1.71.0"
+		}
+	}
+	generateProtoTasks {
+		all()*.plugins {
+			grpc {}
+		}
 	}
 }
