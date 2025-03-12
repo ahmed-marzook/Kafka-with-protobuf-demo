@@ -20,8 +20,8 @@ This application demonstrates how to use Protocol Buffers (protobuf) with Kafka 
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/kafka-protobuf-demo.git
-cd kafka-protobuf-demo
+git clone gh repo clone ahmed-marzook/Kafka-with-protobuf-demo
+cd Kafka-with-protobuf-demo
 ```
 
 ### 2. Start Kafka infrastructure
@@ -46,7 +46,7 @@ You can generate the Protocol Buffer Java classes manually using:
 protoc --java_out=./src/main/java src/main/resources/proto/addressbook.proto
 ```
 
-Or let Gradle handle it during the build process.
+Or let Gradle handle it during the build process. **(In Progress)**
 
 ### 4. Build the application
 
@@ -76,20 +76,35 @@ Send a POST request to `http://localhost:8080/api/v1/message` with a JSON body:
 curl -X POST http://localhost:8080/api/v1/message \
   -H "Content-Type: application/json" \
   -d '{
-    "people": [
-      {
-        "name": "John Doe",
-        "id": 1,
-        "email": "john.doe@example.com",
-        "phones": [
-          {
-            "number": "555-1234",
-            "type": "MOBILE"
-          }
-        ]
-      }
-    ]
-  }'
+  "people": [
+    {
+      "name": "John Doe",
+      "id": 1,
+      "email": "john.doe@example.com",
+      "phones": [
+        {
+          "number": "555-1234",
+          "type": "MOBILE"
+        },
+        {
+          "number": "555-5678",
+          "type": "HOME"
+        }
+      ]
+    },
+    {
+      "name": "Jane Smith",
+      "id": 2,
+      "email": "jane.smith@example.com",
+      "phones": [
+        {
+          "number": "555-4321",
+          "type": "WORK"
+        }
+      ]
+    }
+  ]
+}'
 ```
 
 ### Verify the message was received
