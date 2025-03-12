@@ -46,7 +46,7 @@ You can generate the Protocol Buffer Java classes manually using:
 protoc --java_out=./src/main/java src/main/resources/proto/addressbook.proto
 ```
 
-Or let Gradle handle it during the build process. **(In Progress)**
+Or let Gradle handle it during the build process.
 
 ### 4. Build the application
 
